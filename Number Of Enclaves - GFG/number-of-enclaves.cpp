@@ -21,30 +21,41 @@ class Solution {
         int drow[] = {-1,0,1,0}; 
 	    int dcol[] = {0,1,0,-1};
 	    
-	    
-	    for(int j=0;j<m;j++){
-            // firstrow
-            if(!vis[0][j] and  grid[0][j]==1){
-                q.push({0,j});
-                vis[0][j]=1;
-            }
-            // last row
-            if(!vis[n-1][j] and grid[n-1][j]==1){
-                q.push({n-1,j});
-                vis[n-1][j]=1;
-            }
-        }
+	   // code from line 51 to 60 can also be reprented as
+	   // for(int j=0;j<m;j++){
+    //         // firstrow
+    //         if(!vis[0][j] and  grid[0][j]==1){
+    //             q.push({0,j});
+    //             vis[0][j]=1;
+    //         }
+    //         // last row
+    //         if(!vis[n-1][j] and grid[n-1][j]==1){
+    //             q.push({n-1,j});
+    //             vis[n-1][j]=1;
+    //         }
+    //     }
+        
+    //     for(int i=0;i<n;i++){
+    //         // firstrow
+    //         if(!vis[i][0] and  grid[i][0]==1){
+    //             q.push({i,0});
+    //             vis[i][0]=1;
+    //         }
+    //         // last row
+    //         if(!vis[i][m-1] and grid[i][m-1]==1){
+    //             q.push({i,m-1});
+    //             vis[i][m-1]=1;
+    //         }
+    //     }
         
         for(int i=0;i<n;i++){
-            // firstrow
-            if(!vis[i][0] and  grid[i][0]==1){
-                q.push({i,0});
-                vis[i][0]=1;
-            }
-            // last row
-            if(!vis[i][m-1] and grid[i][m-1]==1){
-                q.push({i,m-1});
-                vis[i][m-1]=1;
+            for(int j=0;j<m;j++){
+                if(i==0 || i==n-1 || j==0 || j==m-1){
+                    if(grid[i][j]==1){
+                        vis[i][j]=1;
+                        q.push({i,j});
+                    }
+                }
             }
         }
         
