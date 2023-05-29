@@ -43,38 +43,7 @@ class Solution
 	                q.push({nrow,ncol});
 	            }
 	        }
-	       // if((i+1)>=0 and (i+1)<N and (j+2)>=0 and (j+2)<N and a[i+1][j+2]==0){
-	       //     a[i+1][j+2]=a[i][j]+1;
-	       //     q.push({i+1,j+2});
-	       // }
-	       // if((i+2)>=0 and (i+2)<N and (j+1)>=0 and (j+1)<N and a[i+2][j+1]==0){
-	       //     a[i+2][j+1]=a[i][j]+1;
-	       //     q.push({i+2,j+1});
-	       // }
-	       // if((i-1)>=0 and (i-1)<N and (j+2)>=0 and (j+2)<N and a[i-1][j+2]==0){
-	       //     a[i-1][j+2]=a[i][j]+1;
-	       //     q.push({i-1,j+2});
-	       // }
-	       // if((i-2)>=0 and (i-2)<N and (j+1)>=0 and (j+1)<N and a[i-2][j+1]==0){
-	       //     a[i-2][j+1]=a[i][j]+1;
-	       //     q.push({i-2,j+1});
-	       // }
-	       // if((i+1)>=0 and (i+1)<N and (j-2)>=0 and (j-2)<N and a[i+1][j-2]==0){
-	       //     a[i+1][j-2]=a[i][j]+1;
-	       //     q.push({i+1,j-2});
-	       // }
-	       // if((i+2)>=0 and (i+2)<N and (j-1)>=0 and (j-1)<N and a[i+2][j-1]==0){
-	       //     a[i+2][j-1]=a[i][j]+1;
-	       //     q.push({i+2,j-1});
-	       // }
-	       // if((i-1)>=0 and (i-1)<N and (j-2)>=0 and (j-2)<N and a[i-1][j-2]==0){
-	       //     a[i-1][j-2]=a[i][j]+1;
-	       //     q.push({i-1,j-2});
-	       // }
-	       // if((i-2)>=0 and (i-2)<N and (j-1)>=0 and (j-1)<N and a[i-2][j-1]==0){
-	       //     a[i-2][j-1]=a[i][j]+1;
-	       //     q.push({i-2,j-1});
-	       // }
+	       
 	        
 	        
 	    }
