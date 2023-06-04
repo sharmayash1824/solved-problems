@@ -105,22 +105,24 @@ struct Node {
 // the function and return an vector of Node
 // which contains all the duplicate sub-tree
 
- string solve(Node* root, unordered_map<string,int> &m, vector<Node*> &ans){
-        if(!root) return "N";
-        string s = "";
-        
-        s += to_string(root->data) + "," + solve(root->left, m, ans) + "," + solve(root->right, m, ans);
-        if(m[s] == 1)
-            ans.push_back(root);
-        m[s]++;
-        return s;
- }
+string solve(Node* root,unordered_map<string,int> &mp,vector<Node*> &ans){
+    if(!root) return "N";
+    string s="";
+    s = to_string(root->data) + "," + solve(root->left,mp,ans) + "," + solve(root->right,mp,ans);
+    
+    if(mp[s]==1){
+        ans.push_back(root);
+    }
+    mp[s]++;
+    
+    return s;
+}
  
 vector<Node*> printAllDups(Node* root)
 {
-    unordered_map<string, int>m;
+    unordered_map<string,int> mp;
     vector<Node*> ans;
-    solve(root, m, ans);
+    solve(root,mp,ans);
     return ans;
 }
 
