@@ -49,9 +49,11 @@ class Solution
      Node* prev = NULL;
      while(temp){
          if(mp[temp->data]>=1){
+            Node* duplicate = temp;
             Node* tempnext = temp->next;
             prev->next=tempnext;
             temp=temp->next; 
+            delete(duplicate);
          }
          else{
              mp[temp->data]++;
