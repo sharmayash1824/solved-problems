@@ -12,6 +12,7 @@ class Solution{
   public:
   int smallestSumSubarray(vector<int>& a){
       //Code here
+      // kadane's algo 
       int sum =0;
       int mini = INT_MAX ;
       for(int i = 0 ; i<a.size();i++){
