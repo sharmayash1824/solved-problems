@@ -104,7 +104,6 @@ struct Node {
 // you are required to complete this function
 // the function and return an vector of Node
 // which contains all the duplicate sub-tree
-
 string solve(Node* root,unordered_map<string,int> &mp,vector<Node*> &ans){
     if(!root) return "N";
     string s="";
