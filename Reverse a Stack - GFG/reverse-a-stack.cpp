@@ -10,15 +10,14 @@ using namespace std;
 
 class Solution{
 public:
-    stack<int> rt;
+    stack<int> ans;
     void Reverse(stack<int> &St){
-        
+        // using recursion
         if(St.empty()) return;
-        int num = St.top();
+        ans.push(St.top());
         St.pop();
-        rt.push(num);
         Reverse(St);
-        St = rt;
+        St=ans;
     }
 };
 
