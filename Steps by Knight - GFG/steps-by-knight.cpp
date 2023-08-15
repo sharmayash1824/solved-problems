@@ -15,7 +15,10 @@ class Solution
 	    int x2 = TargetPos[0];
 	    int y2 = TargetPos[1];
 	    
-	    int a[1001][1001];
+	    int delrow[] = {-1,1,-1,1,2,-2,2,-2};
+	    int delcol[] = {-2,-2,2,2,-1,-1,1,1};
+	    
+	    int a[N+1][N+1];
 	    
 	    if(x1==x2 and y1==y2) return 0;
 	    
@@ -33,8 +36,6 @@ class Solution
 	        int col = cur.second;
 	        q.pop();
 	        
-	        int delrow[] = {2,1,-1,-2,-2,-1,1,2};
-            int delcol[] = {1,2,2,1,-1,-2,-2,-1};
 	        for(int t=0;t<8;t++){
 	            int nrow = row + delrow[t];
 	            int ncol = col + delcol[t];
@@ -49,6 +50,7 @@ class Solution
 	    }
 	    
 	    return a[x2-1][y2-1];
+	    
 	}
 };
 
