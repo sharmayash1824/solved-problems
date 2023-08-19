@@ -108,29 +108,30 @@ class Solution{
     	// Code here
     	vector<int> ans;
     	if(!root) return ans;
-    	
     	queue<Node*> q;
-    	
     	q.push(root);
-    	bool flag = true;
-    	
+    	bool lefttoright = true;
     	while(!q.empty()){
     	    int s = q.size();
-    	    vector<int> v(s);
-    	    
+    	    vector<int> temp(s);
     	    for(int i=0;i<s;i++){
     	        Node* node = q.front();
     	        q.pop();
-    	        int index = (flag) ? i : (s-1-i);
-    	        v[index]=node->data;
+    	        int index;
+    	        if(lefttoright){
+    	            index = i;
+    	        }else{
+    	            index=s-i-1;
+    	        }
+    	        temp[index]=node->data;
     	        if(node->left) q.push(node->left);
     	        if(node->right) q.push(node->right);
+    	        
     	    }
-    	    
     	    for(int i=0;i<s;i++){
-    	        ans.push_back(v[i]);
+    	        ans.push_back(temp[i]);
     	    }
-    	    flag =!flag;
+    	    lefttoright = !lefttoright;
     	}
     	
     	return ans;
