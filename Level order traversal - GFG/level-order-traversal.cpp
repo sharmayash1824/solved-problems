@@ -47,20 +47,23 @@ class Solution
       //Your code here
       vector<int> ans;
       if(node==NULL) return ans;
-      
       queue<Node*> q;
       q.push(node);
       while(!q.empty()){
           int s = q.size();
           for(int i=0;i<s;i++){
-              Node* node=q.front();
+              Node* temp = q.front();
               q.pop();
-              if(node->left!=NULL)  q.push(node->left);
-              if(node->right!=NULL)  q.push(node->right);
-              ans.push_back(node->data);
+              if(temp->left) q.push(temp->left);
+              if(temp->right) q.push(temp->right);
+              
+              ans.push_back(temp->data);
           }
       }
+      
       return ans;
+      
+      
     }
 };
 
