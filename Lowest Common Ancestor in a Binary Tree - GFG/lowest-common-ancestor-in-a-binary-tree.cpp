@@ -41,16 +41,16 @@ class Solution
     Node* lca(Node* root ,int n1 ,int n2 )
     {
        //Your code here 
-       if(!root) return root;
+       if(root==NULL) return root;
        
        if(root->data==n1 or root->data==n2) return root;
        
-       Node* l = lca(root->left,n1,n2);
-       Node* r = lca(root->right,n1,n2);
+       Node* lef = lca(root->left,n1,n2);
+       Node* rig = lca(root->right,n1,n2);
        
-       if(l and r) return root;
-       else if(l) return l;
-       return r;
+       if(lef and rig) return root;
+       else if(lef) return lef;
+       return rig;
     }
 };
 
