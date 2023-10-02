@@ -33,25 +33,21 @@ class Solution
 {
     public:
     //Function to reverse a linked list.
+    
+    Node* func(Node* head,Node* prev){
+        if(!head) return prev;
+        
+        Node* nextptr = head->next;
+        head->next=prev;
+        
+        return func(nextptr,head);
+        
+    }
     struct Node* reverseList(struct Node *head)
     {
         // code here
         // return head of reversed list
-        
-        if(!head) return head;
-        if(!head->next) return head;
-        Node* curr=head;
-        Node* prev=NULL;
-        Node* nextptr;
-        
-        while(curr){
-            nextptr=curr->next;
-            curr->next=prev;
-            prev=curr;
-            curr=nextptr;
-        }
-        
-        return prev;
+        return func(head,NULL);
     }
     
 };
