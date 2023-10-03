@@ -47,6 +47,7 @@ class Solution
       //Your code here
       vector<int> ans;
       if(node==NULL) return ans;
+      
       queue<Node*> q;
       q.push(node);
       while(!q.empty()){
@@ -62,8 +63,6 @@ class Solution
       }
       
       return ans;
-      
-      
     }
 };
 
