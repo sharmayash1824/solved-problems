@@ -118,19 +118,17 @@ vector<int> reverseLevelOrder(Node *root)
     // code here
     vector<int> ans;
     stack<int> st;
-    if(root==NULL) return ans;
-    
+    if(!root) return ans;
     queue<Node*> q;
     q.push(root);
-    
     while(!q.empty()){
         int s = q.size();
         for(int i=0;i<s;i++){
             Node* temp = q.front();
             q.pop();
+            st.push(temp->data);
             if(temp->right) q.push(temp->right);
             if(temp->left) q.push(temp->left);
-            st.push(temp->data);
         }
     }
     
