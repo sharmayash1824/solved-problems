@@ -11,11 +11,11 @@ class Solution{
 public:
     int minValue(string s, int k){
         // code here
-        int ans = 0;
         unordered_map<char,int> mp;
         for(int i=0;i<s.length();i++){
             mp[s[i]]++;
         }
+        
         priority_queue<int> pq;
         for(auto it:mp){
             pq.push(it.second);
@@ -24,12 +24,12 @@ public:
         for(int i=0;i<k;i++){
             int temp = pq.top();
             pq.pop();
-            temp=temp-1;
+            temp--;
             pq.push(temp);
         }
-        
+        int ans = 0;
         while(!pq.empty()){
-            ans = ans + pow(pq.top(),2);
+            ans+=pow(pq.top(),2);
             pq.pop();
         }
         
