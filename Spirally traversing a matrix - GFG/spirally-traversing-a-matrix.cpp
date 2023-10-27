@@ -10,13 +10,15 @@ class Solution
     vector<int> spirallyTraverse(vector<vector<int> > matrix, int r, int c) 
     {
         // code here 
-        int left=0;
-        int right=c-1;
-        int top=0;
-        int bottom=r-1;
-        
         vector<int> ans;
+        
+        int left = 0;
+        int right = c-1;
+        int top = 0;
+        int bottom = r-1;
+        
         while(top<=bottom and left<=right){
+            
             for(int i=left;i<=right;i++){
                 ans.push_back(matrix[top][i]);
             }top++;
@@ -31,8 +33,6 @@ class Solution
                 }bottom--;
             }
             
-            
-            
             if(left<=right){
                 for(int i=bottom;i>=top;i--){
                     ans.push_back(matrix[i][left]);
@@ -40,8 +40,6 @@ class Solution
             }
             
         }
-        
-        
         
         return ans;
     }
