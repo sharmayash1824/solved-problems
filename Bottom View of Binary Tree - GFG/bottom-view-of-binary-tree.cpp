@@ -99,10 +99,11 @@ class Solution {
         // Your Code Here
         vector<int> ans;
         if(!root) return ans;
+        map<int,int> mp;
         
         queue<pair<Node*,int>> q;
+        
         q.push({root,0});
-        map<int,int> mp;
         
         while(!q.empty()){
             int s = q.size();
@@ -112,6 +113,7 @@ class Solution {
                 q.pop();
                 
                 mp[line]=node->data;
+                
                 if(node->left) q.push({node->left,line-1});
                 if(node->right) q.push({node->right,line+1});
             }
