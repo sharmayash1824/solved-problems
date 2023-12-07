@@ -127,15 +127,17 @@ vector<int> diagonal(Node *root)
    // your code here
    vector<int> ans;
    if(!root) return ans;
+   
    queue<Node*> q;
    q.push(root);
    while(!q.empty()){
-       Node* node = q.front();
+       Node* temp = q.front();
        q.pop();
-       while(node){
-           if(node->left) q.push(node->left);
-           ans.push_back(node->data);
-           node=node->right;
+       
+       while(temp){
+           ans.push_back(temp->data);
+           if(temp->left) q.push(temp->left);
+           temp=temp->right;
        }
    }
    
